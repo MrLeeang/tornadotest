@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>{{k1}}</div>
+    {% for i in k1 %}
+        <div>{{i}}</div>
+    {% end %}
+
+    <div>{{k2}}</div>
+    <div>{{k2.get("name")}}</div>
+    {% for k, v in k2.items() %}
+        <div>{{k}}-----{{v}}</div>
+    {% end %}
+
+    {{tab()}}
+    {% module custom(123) %}
+
+</body>
+</html>

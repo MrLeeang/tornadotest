@@ -1,0 +1,29 @@
+<title>Tornado WebSockets</title>
+
+
+<strong>Message to Send:</strong> <input type="text" id="msg" maxlength="25">
+<input type="button" onclick="sendMsg();" value="Send">
+
+<script type="text/javascript">
+
+    Socket = new WebSocket("ws://"+ document.location.host +"/ws?name=lihw");
+
+    // Socket.onopen = function () {
+    //     Socket.send("连接成功");
+    // };
+
+    function sendMsg() {
+        if ("WebSocket" in window) {
+            Socket.send(document.getElementById('msg').value);
+        }
+    }
+
+    Socket.onmessage = function (evt) {
+        alert(evt.data);
+    };
+
+    Socket.onclose = function () {
+        Socket.close();
+    };
+</script>
+
