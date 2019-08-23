@@ -6,7 +6,7 @@
 # @File         : app.py
 # @Software     : PyCharm
 
-from web import application
+from appliction import application
 import tornado.ioloop
 import tornado.httpserver
 
